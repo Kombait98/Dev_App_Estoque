@@ -1,0 +1,100 @@
+﻿@page
+@model CadastroModel
+@{
+    ViewData["Title"] = "Cadastro";
+    ViewData["Default"] = "This field is required.";
+}
+<h1>@ViewData["Title"]</h1>
+
+
+<p>Cadastro de itens // Sem bd</p>
+
+<p>  </p>
+
+<div class="col-md-7 col-lg-8">
+    <h4 class="mb-3">Novo item</h4>
+    <form class="needs-validation" novalidate="">
+        <div class="row g-3">
+            <div class="col-sm-6">
+                <label for="item" class="form-label">Nome do item</label>
+                <input type="text" class="form-control" id="item" placeholder=" Ex. Cabo HDMI" value="" required="">
+                <div class="invalid-feedback">
+                    @ViewData["Default"]
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <label for="uniqueCode" class="form-label">Ticket OTRS ou NUMERO DA AGENDA</label>
+                <input type="text" class="form-control" id="uniqueCode" placeholder=" Ex. 0408201" value="" required="">
+                <div class="invalid-feedback">
+                    @ViewData["Default"]
+                </div>
+            </div>
+
+            <div class="col-12">
+                <label for="username" class="form-label">Username</label>
+                <div class="input-group has-validation">
+                    <span class="input-group-text"> </span>
+                    <input type="text" class="form-control" id="username" placeholder="Username" required="">
+                    <div class="invalid-feedback">
+                        @ViewData["Default"]
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <label for="state" class="form-label">Situação</label>
+                <select class="form-select" id="state" required="">
+                    <option value="">Choose...</option>
+                    <option id="Sol">Solicitado</option>
+                    <option id="Rec">Recebido</option>
+                    <option id="NR">Não Recebido</option>
+                </select>
+                <div class="invalid-feedback">
+                    @ViewData["Default"]
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <label for="qtd" class="form-label">Quantidade</label>
+                <input type="text" class="form-control" id="qtd" placeholder="" required="">
+                <div class="invalid-feedback">
+                    @ViewData["Default"]
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-4">
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="PE">
+            <label class="form-check-label" for="same-address">Pedido Emergencial</label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="save-info">
+            <label class="form-check-label" for="save-info">Place holder</label>
+        </div>
+
+        <div class="my-3">
+            <div class="form-check">
+                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" required="">
+                <label class="form-check-label" for="credit">Credit card</label>
+            </div>
+            <div class="form-check">
+        <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required="">
+                <label class="form-check-label" for="debit">Debit card</label>
+            </div>
+            <div class="form-check">
+                <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required="">
+                <label class="form-check-label" for="paypal">PayPal</label>
+            </div>
+        </div>
+
+        <hr class="my-4">
+
+        
+
+        <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+    </form>
+</div>
