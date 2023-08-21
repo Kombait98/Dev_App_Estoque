@@ -42,7 +42,7 @@
                 </div>
             </div>
 
-            <div class="col-md-5">
+            <div class="col-md-4">
                 <label for="state" class="form-label">Situação</label>
                 <select class="form-select" id="state" required="">
                     <option value="">Choose...</option>
@@ -55,9 +55,24 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <label for="qtd" class="form-label">Quantidade</label>
                 <input type="text" class="form-control" id="qtd" placeholder="" required="">
+                <div class="invalid-feedback">
+                    @ViewData["Default"]
+                </div>
+            </div>
+            <div class="col-md-5">
+                <label for="vlt" class="form-label">Valor do Item</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">R$</span>
+                        </div>
+                    <input type="number" min="0" class="form-control" aria-label="Reais">
+                        <div class="input-group-append">
+                            <span class="input-group-text">.00</span>
+                        </div>
+                    </div>
                 <div class="invalid-feedback">
                     @ViewData["Default"]
                 </div>
